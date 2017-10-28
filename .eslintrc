@@ -1,0 +1,23 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "quotes": ["error", "single"],
+    "semi": "error",
+    "comma-dangle": ["error", "always-multiline"],
+    "prettier/prettier": ["error", "fb"]
+  },
+  "extends": [
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "plugins": ["prettier"]
+}
