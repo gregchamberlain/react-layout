@@ -10,5 +10,9 @@
   },
   "homepage": "https://github.com/gregchamberlain/react-layout#readme",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "immutable": "^3.8.2",
+    "prop-types": "^15.6.0"
+  }
 }

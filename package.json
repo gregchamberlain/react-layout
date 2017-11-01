@@ -1,9 +1,10 @@
 {
   "private": true,
   "version": "0.1.0",
-  "workspaces": [
-    "packages/*"
-  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "workspaces": ["packages/*"],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
