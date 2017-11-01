@@ -6,6 +6,7 @@ version: 2
 jobs:
   build:
     environment:
+      - YARN_VERSION: 1.2.1
       - CC_TEST_REPORTER_ID: "a3f9cb652f15334ab72c7152eb96859b912e6dd2ba4a06df7c3b79d676f3e421"
 
     docker:
@@ -19,6 +20,10 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
+      - run: |
+          if [[ ! -e ~/.yarn/bin/yarn || $(yarn --version) != "${YARN_VERSION}" ]]; then
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION
+          fi
       - run: yarn install
       - save_cache:
           paths:
