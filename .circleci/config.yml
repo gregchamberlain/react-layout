@@ -16,29 +16,29 @@ jobs:
 
     steps:
       - checkout
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
-      - run: |
-          if [[ ! -e ~/.yarn/bin/yarn || $(yarn --version) != "${YARN_VERSION}" ]]; then
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION
-          fi
-      - run: yarn install
-      - run: ls packages/core/
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run:
-          name: Configure Test Reporter 
-          command: |
-              curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-              chmod +x ./cc-test-reporter
-              ./cc-test-reporter before-build
+      # - restore_cache:
+      #     keys:
+      #     - v1-dependencies-{{ checksum "package.json" }}
+      #     - v1-dependencies-
+      # - run: |
+      #     if [[ ! -e ~/.yarn/bin/yarn || $(yarn --version) != "${YARN_VERSION}" ]]; then
+      #       curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION
+      #     fi
+      - run: yarn
+      - run: ls node_modules/
+      # - save_cache:
+      #     paths:
+      #       - node_modules
+      #     key: v1-dependencies-{{ checksum "package.json" }}
+      # - run:
+      #     name: Configure Test Reporter 
+      #     command: |
+      #         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      #         chmod +x ./cc-test-reporter
+      #         ./cc-test-reporter before-build
       - run: yarn test
-      - run:
-          name: Upload Test Results
-          command: |
-              ./cc-test-reporter format-coverage -t lcov coverage/lcov.info
-              ./cc-test-reporter upload-coverage
+      # - run:
+      #     name: Upload Test Results
+      #     command: |
+      #         ./cc-test-reporter format-coverage -t lcov coverage/lcov.info
+      #         ./cc-test-reporter upload-coverage
