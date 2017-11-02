@@ -1,12 +1,9 @@
 {
   "private": true,
-  "version": "0.1.0",
   "scripts": {
     "test": "jest --coverage"
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -24,12 +21,7 @@
     "prettier": "1.7.4"
   },
   "jest": {
-    "roots": [
-      "<rootDir>/packages",
-      "<rootDir>/scripts"
-    ],
-    "collectCoverageFrom": [
-      "packages/**/*.js"
-    ]
+    "roots": ["<rootDir>/packages", "<rootDir>/scripts"],
+    "collectCoverageFrom": ["packages/**/*.js"]
   }
 }
