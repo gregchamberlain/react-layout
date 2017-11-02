@@ -1,4 +1,4 @@
-import { fromJS } from 'Immutable';
+import { fromJS } from 'immutable';
 
 import Store from '../src/store';
 
