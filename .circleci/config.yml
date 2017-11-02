@@ -24,8 +24,8 @@ jobs:
           if [[ ! -e ~/.yarn/bin/yarn || $(yarn --version) != "${YARN_VERSION}" ]]; then
             curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION
           fi
-      - run: ~/.yarn/bin/yarn --version
-      - run: yarn
+      - run: ~/.yarn/bin/yarn
+      - run: ls node_modules/
       # - save_cache:
       #     paths:
       #       - node_modules
