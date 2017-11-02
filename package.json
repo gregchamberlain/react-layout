@@ -21,7 +21,7 @@
     "prettier": "1.7.4"
   },
   "jest": {
-    "roots": ["<rootDir>/packages", "<rootDir>/scripts"],
+    "roots": ["<rootDir>"],
     "collectCoverageFrom": ["packages/**/*.js"],
     "moduleDirectories": ["<rootDir>/node_modules"]
   }
