@@ -22,6 +22,7 @@
   },
   "jest": {
     "roots": ["<rootDir>/packages", "<rootDir>/scripts"],
-    "collectCoverageFrom": ["packages/**/*.js"]
+    "collectCoverageFrom": ["packages/**/*.js"],
+    "moduleDirectories": ["<rootDir>/node_modules"]
   }
 }
