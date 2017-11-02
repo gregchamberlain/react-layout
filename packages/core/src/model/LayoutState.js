@@ -5,6 +5,6 @@ const LayoutStateRecord = Record({
   itemMap: Map(),
 });
 
-class LayoutState extends LayoutState {}
+class LayoutState extends LayoutStateRecord {}
 
 export default LayoutState;

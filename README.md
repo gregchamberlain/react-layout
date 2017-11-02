@@ -1,1 +1,1 @@
-# React Layout &middot;
+# React Layout &middot; [![CircleCI](https://circleci.com/gh/gregchamberlain/react-layout.svg?style=shield)](https://circleci.com/gh/gregchamberlain/react-layout)

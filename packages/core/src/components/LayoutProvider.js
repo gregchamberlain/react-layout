@@ -8,8 +8,18 @@ class LayoutProvider extends Component {
     super();
     this.store = new Store();
   }
+
+  getChildContext() {
+    return { layoutStore: this.store };
+  }
+
+  render() {
+    return this.props.children;
+  }
 }
 
 LayoutProvider.childContextTypes = {
-  store: PropTypes.instanceOf(Store),
+  layoutStore: PropTypes.instanceOf(Store),
 };
+
+export default LayoutProvider;

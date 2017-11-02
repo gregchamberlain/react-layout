@@ -13,6 +13,8 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.3",
     "eslint": "^4.10.0",
     "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-prettier": "^2.3.1",
@@ -23,6 +25,10 @@
   "jest": {
     "roots": ["<rootDir>"],
     "collectCoverageFrom": ["packages/**/*.js"],
-    "moduleDirectories": ["<rootDir>/node_modules"]
+    "moduleDirectories": ["<rootDir>/node_modules"],
+    "setupFiles": [
+      "<rootDir>/scripts/jest/environment.js",
+      "<rootDir>/scripts/jest/setup.js"
+    ]
   }
 }
