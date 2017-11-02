@@ -1,5 +1,5 @@
 // @flow
-import { Map, Set, fromJS } from 'immutable';
+import { Map, Set, fromJS } from 'Immutable';
 
 type StoreState = Map<string, mixed>;
 type Listener = StoreState => void;
