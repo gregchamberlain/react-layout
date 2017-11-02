@@ -1,7 +1,12 @@
-import { LayoutState } from '../src';
+import * as EXPORTS from '../src';
+import LayoutState from '../src/model/LayoutState';
+import LayoutProvider from '../src/components/LayoutProvider';
 
 describe('Package exports', () => {
   it('Exports LayoutState', () => {
-    expect(LayoutState).not.toBeUndefined();
+    expect(EXPORTS.LayoutState).toBe(LayoutState);
+  });
+  it('Exports LayoutProvider', () => {
+    expect(EXPORTS.LayoutProvider).toBe(LayoutProvider);
   });
 });
