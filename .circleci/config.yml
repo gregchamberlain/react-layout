@@ -20,24 +20,30 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "yarn.lock" }}
           - v1-dependencies-
-      - run: |
+      - run:
+          name: Upgrading Yarn
+          command: |
           if [[ ! -e ~/.yarn/bin/yarn || $(yarn --version) != "${YARN_VERSION}" ]]; then
             curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION
           fi
-      - run: ~/.yarn/bin/yarn
+      - run:
+          name: Installing Dependencies
+          command: ~/.yarn/bin/yarn
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
       - run:
-          name: Configure Test Reporter 
+          name: Configuring Test Reporter 
           command: |
               curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
               chmod +x ./cc-test-reporter
               ./cc-test-reporter before-build
-      - run: yarn test
       - run:
-          name: Upload Test Results
+          name: Running Tests
+          command: yarn test
+      - run:
+          name: Uploading Test Results
           command: |
               ./cc-test-reporter format-coverage -t lcov coverage/lcov.info
               ./cc-test-reporter upload-coverage
