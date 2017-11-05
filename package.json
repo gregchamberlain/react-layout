@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "build": "rimraf build && node scripts/webpack/build.js"
   },
   "workspaces": ["packages/*"],
   "devDependencies": {
@@ -9,10 +10,12 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.2.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.3",
     "eslint": "^4.10.0",
@@ -20,7 +23,10 @@
     "eslint-plugin-prettier": "^2.3.1",
     "jest": "^21.2.1",
     "jest-config": "^21.2.1",
-    "prettier": "1.7.4"
+    "ncp": "^2.0.0",
+    "prettier": "1.7.4",
+    "rimraf": "^2.6.2",
+    "webpack": "^3.8.1"
   },
   "jest": {
     "roots": ["<rootDir>"],

@@ -4,7 +4,8 @@
   "description": "A serializable layout system for react.",
   "main": "lib/index.js",
   "repository": "https://github.com/gregchamberlain/react-layout.git",
-  "author": "Greg Chamberlain <gregchamberlain94@gmail.com> (https://gregchamberlain.github.io)",
+  "author":
+    "Greg Chamberlain <gregchamberlain94@gmail.com> (https://gregchamberlain.github.io)",
   "bugs": {
     "url": "https://github.com/gregchamberlain/react-layout/issues"
   },
@@ -14,6 +15,9 @@
   "dependencies": {
     "immutable": "^3.8.2",
     "prop-types": "^15.6.0"
+  },
+  "peerDependencies": {
+    "react": "*"
   },
   "devDependencies": {
     "react": "^16.0.0",
